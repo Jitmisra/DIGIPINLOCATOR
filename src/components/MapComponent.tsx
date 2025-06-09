@@ -24,6 +24,24 @@ interface PlacePrediction {
   };
 }
 
+// Add interface for map event
+interface MapClickEvent {
+  lngLat: {
+    lat: number;
+    lng: number;
+  };
+}
+
+// Add interface for marker drag event
+interface MarkerDragEvent {
+  target: {
+    getLngLat: () => {
+      lat: number;
+      lng: number;
+    };
+  };
+}
+
 const MapComponent: React.FC<MapComponentProps> = ({
   latitude,
   longitude,
@@ -330,7 +348,7 @@ const MapComponent: React.FC<MapComponentProps> = ({
         
         // Add click handler for map if interactive
         if (interactive && onLocationSelect) {
-          map.on('click', (e) => {
+          map.on('click', (e: MapClickEvent) => {
             const { lng, lat } = e.lngLat;
             marker.setLngLat([lng, lat]);
             onLocationSelect(lat, lng);
@@ -345,8 +363,8 @@ const MapComponent: React.FC<MapComponentProps> = ({
           });
           
           // Add drag handler for marker
-          marker.on('dragend', () => {
-            const lngLat = marker.getLngLat();
+          marker.on('dragend', (e: MarkerDragEvent) => {
+            const lngLat = e.target.getLngLat();
             onLocationSelect(lngLat.lat, lngLat.lng);
             
             // Update popup content
