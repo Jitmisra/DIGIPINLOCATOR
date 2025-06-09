@@ -1,1 +1,1 @@
-self.__REACT_LOADABLE_MANIFEST="{\"../components/MapComponent.tsx -> olamaps-web-sdk\":{\"id\":\"../components/MapComponent.tsx -> olamaps-web-sdk\",\"files\":[\"static/chunks/node_modules_olamaps-web-sdk_dist_index_js.js\"]},\"index.tsx -> @/components/MapComponent\":{\"id\":\"index.tsx -> @/components/MapComponent\",\"files\":[\"static/chunks/src_components_MapComponent_tsx.js\"]}}"
+self.__REACT_LOADABLE_MANIFEST="{}"

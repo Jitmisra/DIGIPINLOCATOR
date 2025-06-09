@@ -53,11 +53,6 @@ const nextConfig = {
 
   // Compress responses
   compress: true,
-
-  // Enable experimental features for better SEO
-  experimental: {
-    optimizeCss: true,
-  },
 };
 
 module.exports = withPWA(nextConfig);
