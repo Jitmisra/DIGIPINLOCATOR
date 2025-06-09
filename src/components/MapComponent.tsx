@@ -221,7 +221,7 @@ const MapComponent: React.FC<MapComponentProps> = ({
     
     // Validate input format
     const validSymbols = ['2', '3', '4', '5', '6', '7', '8', '9', 'C', 'F', 'J', 'K', 'L', 'M', 'P', 'T'];
-    const isValid = cleanCode.length === 10 && [...cleanCode].every(char => validSymbols.includes(char));
+    const isValid = cleanCode.length === 10 && Array.from(cleanCode).every(char => validSymbols.includes(char));
     
     if (!isValid) {
       setDecodingError('Invalid DIGIPIN format');

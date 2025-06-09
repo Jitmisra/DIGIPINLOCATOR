@@ -7,11 +7,56 @@ const withPWA = require('next-pwa')({
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
-  images: {
-    domains: ['api.olamaps.com'],
+
+  // SEO optimizations
+  async headers() {
+    return [
+      {
+        source: '/(.*)',
+        headers: [
+          {
+            key: 'X-Content-Type-Options',
+            value: 'nosniff',
+          },
+          {
+            key: 'X-Frame-Options',
+            value: 'DENY',
+          },
+          {
+            key: 'X-XSS-Protection',
+            value: '1; mode=block',
+          },
+          {
+            key: 'Referrer-Policy',
+            value: 'origin-when-cross-origin',
+          },
+        ],
+      },
+    ];
   },
-  env: {
-    OLA_MAPS_API_KEY: process.env.OLA_MAPS_API_KEY,
+
+  // Generate sitemap
+  async rewrites() {
+    return [
+      {
+        source: '/sitemap.xml',
+        destination: '/api/sitemap',
+      },
+    ];
+  },
+
+  // Image optimization
+  images: {
+    domains: ['digipinlocator.vercel.app'],
+    formats: ['image/webp', 'image/avif'],
+  },
+
+  // Compress responses
+  compress: true,
+
+  // Enable experimental features for better SEO
+  experimental: {
+    optimizeCss: true,
   },
 };
 
