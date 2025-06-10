@@ -6,7 +6,7 @@ class MyDocument extends Document {
       <Html lang="en">
         <Head>
           <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
-          <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+          <meta charSet="utf-8" />
           
           {/* Primary Meta Tags */}
           <meta name="title" content="Know Your DIGIPIN - India Post Digital Postal Index Number Generator & Locator" />
@@ -22,7 +22,7 @@ class MyDocument extends Document {
           {/* Open Graph / Facebook */}
           <meta property="og:type" content="website" />
           <meta property="og:url" content="https://digipinlocator.vercel.app/" />
-          <meta property="og:title" content="Know Your DIGIPIN - India Post Digital Postal Index Number Generator" />
+          <meta property="og:title" content="Know Your DIGIPIN - India Post Digital Postal Index Number" />
           <meta property="og:description" content="Find your DIGIPIN instantly! Generate and locate DIGIPIN codes for any location in India. Official tool for India Post's Digital Postal Index Number system." />
           <meta property="og:image" content="https://digipinlocator.vercel.app/og-image.jpg" />
           <meta property="og:site_name" content="DIGIPIN Locator" />
