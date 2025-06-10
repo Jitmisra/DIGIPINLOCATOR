@@ -1,6 +1,10 @@
 {
   "/_app": "pages/_app.js",
-  "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/": "pages/index.js"
+  "/api/decode": "pages/api/decode.js",
+  "/api/encode": "pages/api/encode.js",
+  "/api/sitemap": "pages/api/sitemap.js",
+  "/": "pages/index.html",
+  "/_error": "pages/_error.js",
+  "/404": "pages/404.html"
 }

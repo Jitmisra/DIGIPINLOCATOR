@@ -131,7 +131,7 @@ const QRGenerator: React.FC<QRGeneratorProps> = ({ value, size = 200 }) => {
           >
             Download SVG
           </button>
-          {navigator.share && (
+          {typeof navigator.share === 'function' && (
             <button
               onClick={shareQRCode}
               className="px-4 py-2 bg-green-600 hover:bg-green-700 text-white rounded-lg transition-colors duration-200"
